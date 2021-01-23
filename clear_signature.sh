@@ -52,18 +52,18 @@ fi
 cd ../../
 pwd
 
-####-ssw
 
-mv --verbose --no-target-directory --force "./$BASE_EXT" "./_original__$BASE_EXT"
+###mv --verbose --no-target-directory --force "./$BASE_EXT" "./_original__$BASE_EXT"
+mv --no-target-directory --force "./$BASE_EXT" "./_original__$BASE_EXT"
 
 cd "./_tmp_$BASE_EXT/";
 pwd
 
 7z a -tzip -y -mmt4 -mx9 -mem=ZipCrypto -mm=Deflate "-x!./$BASE.$EXT" "./$BASE.$EXT" '*'
 
-##mv --verbose --no-target-directory --force "./$BASE.zip" "./$BASE.$EXT"
 
-mv --verbose --force "./$BASE.$EXT" "../";
+###mv --verbose --force "./$BASE.$EXT" "../";
+mv --force "./$BASE.$EXT" "../";
 
 cd "../";
 pwd
