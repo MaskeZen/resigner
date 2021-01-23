@@ -15,9 +15,9 @@ by default one for each CPU core available.
 
 each file will be backed-up to <code>&lowbar;original&lowbar;</code> prefix and its name.  
 
-Note that for security reasons I do not provide a script to delete <code>&lowbar;original*</code> files. 
+Note that for security reasons I do not provide a script to delete <code>&lowbar;original&ast;</code> files. 
 but you can do it manually with:  
-<code>##find "yourpath" -type f \( -name "&lowbar;original&lowbar;*" \) -delete</code>.  
+<code>##find "yourpath" -type f \( -name "&lowbar;original&lowbar;&ast;" \) -delete</code>.  
 
 <hr/>
 
