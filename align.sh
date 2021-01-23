@@ -1,6 +1,6 @@
 #! /bin/sh
-set -x
-set -e
+set +x
+set +e
 ###-----------------
 
 FULLY_QUALIFIED__PATH_BASE_EXT=$(readlink -f $1                   | head -1);         ### fully qualified argument (path, filename, extension).
@@ -12,13 +12,10 @@ BASE=$(basename "$BASE_EXT" ".$EXT"                               | head -1);   
 
 rm -f "$FULLY_QUALIFIED__PATH/$BASE_signed.$EXT"
 
-"$JAVA_HOME/bin/zipalign" -v 4 "$FULLY_QUALIFIED__PATH_BASE_EXT" "$FULLY_QUALIFIED__PATH/$BASE_aligned.$EXT"
+zipalign -v 4 "$FULLY_QUALIFIED__PATH_BASE_EXT" "$FULLY_QUALIFIED__PATH/$BASE_aligned.$EXT"
 
 rm -f "$FULLY_QUALIFIED__PATH_BASE_EXT"
 
 mv --verbose --no-target-directory --force "$FULLY_QUALIFIED__PATH/$BASE_aligned.$EXT" "$FULLY_QUALIFIED__PATH_BASE_EXT"
 
-###-----------------
-set +x
-set +e
 
