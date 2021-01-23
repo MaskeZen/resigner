@@ -46,9 +46,6 @@ to edit your <code>/etc/environment</code> use your favorite text-editor in with
 
 <hr/>
 
-known issue:  
+<del>known issues: for some reason the <code>-prune -name "&lowbar;original&lowbar;&ast;"</code> switch used in <code>find</code> does not work, so if you've ran the process again, the <code>&lowbar;original&lowbar;&ast;</code> files will be discovered and worked on as well, it means you can end up with a lot of files (<code>&lowbar;original&lowbar;&lowbar;original&lowbar;&ast;</code>), but you can still <code>find . -type f \( -name "&lowbar;original&lowbar;&ast;" \) -delete</code> somewhere in your path to remove all of those...</del>  
 
-note: for some reason the <code>-prune -name "&lowbar;original&lowbar;&ast;"</code> switch used in <code>find</code> does not work,  
-so if you've ran the process again, the <code>&lowbar;original&lowbar;&ast;</code> files will be discovered and worked on as well,  
-it means you can end up with a lot of files (<code>&lowbar;original&lowbar;&lowbar;original&lowbar;&ast;</code>),  
-but you can still <code>find . -type f \( -name "&lowbar;original&lowbar;&ast;" \) -delete</code> somewhere in your path to remove all of those...  
+edit: I've re-edited the 'find' command, and it seems to work now, instead of -prune which seems to just apply for folders and their content, using <code>!</code> inside a new "matching group" seems to do it.  

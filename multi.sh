@@ -15,6 +15,11 @@ FULLY_QUALIFIED__RESIGN_SH="$FULLY_QUALIFIED__SELF_PATH/resign.sh"; ### fully qu
 
 ###find . -type f -name '*.zip' -name '*.jar' -name '*.apk' -print0 | parallel -0 unzip -d {/.} {}
 
-find "$FULLY_QUALIFIED__PATH_BASE_EXT" -type f \( -name "*.zip" -o -name "*.jar" -o -name "*.apk" -o -prune -name "_original_*" \) -print0 | parallel -0 "$FULLY_QUALIFIED__RESIGN_SH" {}
+##find "$FULLY_QUALIFIED__PATH_BASE_EXT" -type f \( -name "*.zip" -o -name "*.jar" -o -name "*.apk" -o -prune -name "_original_*" \) -print0 | parallel -0 "$FULLY_QUALIFIED__RESIGN_SH" {}
+
+##find $DOWNLOADSFOLDER \( ! -name 'ignoreme' -o -prune \) -type f
+
+find "$FULLY_QUALIFIED__PATH_BASE_EXT" -type f \( ! -name "_original_*" \)  \( -name "*.zip" -o -name "*.jar" -o -name "*.apk" \) -print0 | parallel -0 "$FULLY_QUALIFIED__RESIGN_SH" {}
+
 
 ##find "$FULLY_QUALIFIED__PATH_BASE_EXT" -type f \( -name "*.zip" -o -name "*.jar" -o -prune -name "_original_*" \) -print0 | parallel -0 ls {}
