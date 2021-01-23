@@ -44,3 +44,11 @@ define <code>JAVA&lowbar;HOME</code> with just the jdk folder (without the <code
 
 to edit your <code>/etc/environment</code> use your favorite text-editor in with superuser permissions for example <code>sudo gedit /etc/environment</code> (<code>sudo apt-get -y install gedit</code>).  
 
+<hr/>
+
+known issue:  
+
+note: for some reason the <code>-prune -name "&lowbar;original&lowbar;&ast;"<code> switch used in <code>find</code> does not work,  
+so if you've ran the process again, the <code>&lowbar;original&lowbar;&ast;</code> files will be discovered and worked on as well,  
+it means you can end up with a lot of files (<code>&lowbar;original&lowbar;&lowbar;original&lowbar;&ast;</code>),  
+but you can still <code>find . -type f \( -name "&lowbar;original&lowbar;&ast;" \) -delete</code> somewhere in your path to remove all of those...  
