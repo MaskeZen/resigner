@@ -13,11 +13,11 @@ to just do it for one file.
 to run multiple executions of <code>resign.sh</code> in parallel,  
 by default one for each CPU core available.  
 
-each file will be backed-up to "_original_" prefix and its name.  
+each file will be backed-up to <code>&lowbar;original&lowbar;</code> prefix and its name.  
 
-Note that for security reasons I do not provide a script to delete <code>_original*</code> files. 
+Note that for security reasons I do not provide a script to delete <code>&lowbar;original*</code> files. 
 but you can do it manually with:  
-<code>##find "yourpath" -type f \( -name "_original_*" \) -delete</code>.  
+<code>##find "yourpath" -type f \( -name "&lowbar;original&lowbar;*" \) -delete</code>.  
 
 <hr/>
 
@@ -30,17 +30,17 @@ here is an example of <code>/etc/environment</code>
 <pre>
 PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/usr/lib/jvm/java-8-openjdk-amd64/bin"
 
-JAVA_HOME="/usr/lib/jvm/java-8-openjdk-amd64"
+JAVA&lowbar;HOME="/usr/lib/jvm/java-8-openjdk-amd64"
 
-JRE_HOME="/usr/lib/jvm/java-8-openjdk-amd64/jre"
+JRE&lowbar;HOME="/usr/lib/jvm/java-8-openjdk-amd64/jre"
 
-JAVA_TOOL_OPTIONS="-Dfile.encoding=UTF8 -Duser.language=en"
+JAVA&lowbar;TOOL&lowbar;OPTIONS="-Dfile.encoding=UTF8 -Duser.language=en"
 </pre>
 
 make sure to add the path to your jdk's <code>bin/</code>-folder at the end of <code>PATH</code>,  
 you can use <code>locate jarsigner</code> to find out where it is install,  
 for example in my case I've added <code>:/usr/lib/jvm/java-8-openjdk-amd64/bin</code> at the end of <code>PATH</code>,  
-define <code>JAVA_HOME</code> with just the jdk folder (without the <code>bin/</code>), <code>JRE_HOME</code> (optional) with the jre folder it is usually a sub-folder of the jdk folder, and <code>JAVA_TOOL_OPTIONS</code> (optional) for extra arguments passed for each java program (useful).  
+define <code>JAVA&lowbar;HOME</code> with just the jdk folder (without the <code>bin/</code>), <code>JRE&lowbar;HOME</code> (optional) with the jre folder it is usually a sub-folder of the jdk folder, and <code>JAVA&lowbar;TOOL&lowbar;OPTIONS</code> (optional) for extra arguments passed for each java program (useful).  
 
 to edit your <code>/etc/environment</code> use your favorite text-editor in with superuser permissions for example <code>sudo gedit /etc/environment</code> (<code>sudo apt-get -y install gedit</code>).  
 
